@@ -1,6 +1,6 @@
 using System;
 
-namespace Model
+namespace Trainers.Api.Model
 {
     //Complex Type
     public class PersonalInfo

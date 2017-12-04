@@ -1,6 +1,6 @@
-using Model.Abstract;
+using Trainers.Api.Model.Abstract;
 
-namespace Model
+namespace Trainers.Api.Model
 {
     public class Trainer : Entity
     {

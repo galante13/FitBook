@@ -1,4 +1,4 @@
-namespace Model.Abstract
+namespace Trainers.Api.Model.Abstract
 {
     public class Entity : IEntity
     {
