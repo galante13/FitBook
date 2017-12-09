@@ -1,0 +1,36 @@
+<form (ngSubmit)="onSubmit()" #heroForm="ngForm">
+  <div class="container">
+    <input type="hidden" value="{{trainer.Id}}">
+
+    <mat-form-field>
+      <input matInput placeholder="Name" name="Name" [(ngModel)]="trainer.name">
+    </mat-form-field>
+
+
+    <mat-form-field>
+      <input matInput [matDatepicker]="birthDatePicker" placeholder="Choose Birth Date" name="Birth Date" [(ngModel)]="trainer.birthDate">
+      <mat-datepicker-toggle matSuffix [for]="birthDatePicker"></mat-datepicker-toggle>
+      <mat-datepicker #birthDatePicker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Birth City" name="Birth City" [(ngModel)]="trainer.birthCity">
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="Nationality" name="Nationality" [(ngModel)]="trainer.nationality">
+    </mat-form-field>
+
+    <mat-form-field>
+      <textarea matInput placeholder="Bio" name="Bio" [(ngModel)]="trainer.bio"></textarea>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input matInput placeholder="City" name="City" [(ngModel)]="trainer.city">
+    </mat-form-field>
+
+    <button mat-button type="submit">Add</button>
+
+  </div>
+
+</form>

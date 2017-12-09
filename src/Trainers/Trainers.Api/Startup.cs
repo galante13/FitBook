@@ -42,6 +42,13 @@ namespace Trainers.Api
                 builder.UseSqlServer(Configuration["TrainersConnection"]);
             });
             services.AddAutoMapper();
+            services.AddCors(options =>
+                options.AddPolicy("AngularAppPolicy",
+                builder => builder
+                .WithOrigins("http://localhost:4200")
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .AllowCredentials()));
             services.AddMvc();
 
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
@@ -52,6 +59,7 @@ namespace Trainers.Api
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseCors("AngularAppPolicy");
             }
 
             app.UseMvc();
