@@ -18,16 +18,21 @@ import {
 
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
-import { AddTrainerComponent } from './trainers/components/add-trainer/add-trainer.component';
+import { TrainerComponent } from './trainers/components/trainer/trainer.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
+import { TrainersListComponent } from './trainers/components/trainers-list/trainers-list.component';
+
+import { AppRoutingModule } from './/app-routing.module';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
-    AddTrainerComponent,
+    TrainerComponent,
     SidenavComponent,
+    TrainersListComponent,
+    TrainerComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,7 +50,9 @@ import { SidenavComponent } from './sidenav/sidenav.component';
     MatSidenavModule,
     MatListModule,
 
-    HttpClientModule
+    HttpClientModule,
+
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent],

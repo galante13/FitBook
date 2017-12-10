@@ -21,8 +21,16 @@ export class TrainersService implements OnInit {
     return this.http.put(this.urlPrefix, trainer);
   }
 
+  public edit(trainer: Trainer): Observable<any> {
+    return this.http.post(this.urlPrefix, trainer);
+  }
+
   public getAll(): Observable<Trainer[]> {
     return this.http.get<Trainer[]>(this.urlPrefix);
+  }
+
+  public get(id): Observable<Trainer> {
+    return this.http.get<Trainer>(this.urlPrefix + `/${id}`);
   }
 
 }
