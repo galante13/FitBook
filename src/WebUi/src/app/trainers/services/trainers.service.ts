@@ -29,4 +29,8 @@ export class TrainersService {
     return this.http.get<Trainer>(this.urlPrefix + `/${id}`);
   }
 
+  public delete(id): Observable<any> {
+    return this.http.delete(this.urlPrefix + `/${id}`);
+  }
+
 }

@@ -1,0 +1,15 @@
+<div>
+  <h2 mat-dialog-title>
+    Delete Trainer.
+  </h2>
+  <mat-divider></mat-divider>
+
+  <mat-dialog-content>
+    Are you sure you want to delete Trainer of name: <strong>{{trainer.name}}</strong>?
+  </mat-dialog-content>
+
+  <mat-dialog-actions>
+    <button mat-raised-button (click)="onCloseConfirm()">Yes</button>
+    <button mat-raised-button (click)="onCloseCancel()">No</button>
+  </mat-dialog-actions>
+</div>>

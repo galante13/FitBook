@@ -1,9 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 
-import { MatTableDataSource } from '@angular/material';
+import { MatTableDataSource, MatDialog } from '@angular/material';
+
+import { Router } from '@angular/router';
 
 import { TrainersService } from '../../services/trainers.service';
 import { Trainer } from '../../models/trainer';
+
+import { TrainerDeleteConfirmDialogComponent } from '../trainer-delete-confirm-dialog/trainer-delete-confirm-dialog.component';
 
 @Component({
   selector: 'app-trainers-list',
@@ -16,7 +20,10 @@ export class TrainersListComponent implements OnInit {
   private displayedColumns = ['id', 'name', 'birthDate', 'birthCity', 'nationality', 'bio', 'city', 'actions'];
   private dataSource: MatTableDataSource<Trainer>;
 
-  public constructor(private trainersService: TrainersService) { }
+  public constructor(
+    private trainersService: TrainersService,
+    private router: Router,
+    public confirmDeleteTrainerDialog: MatDialog) { }
 
   public ngOnInit() {
     this._initTrainers();
@@ -29,11 +36,23 @@ export class TrainersListComponent implements OnInit {
   }
 
   public editTrainer(trainer: Trainer): void {
-
+    this.router.navigate(['/trainer', trainer.id]);
   }
 
-  public deleteTrainer(trainer: Trainer): void {
+  public openDeleteTrainerConfirm(trainer: Trainer): void {
+    const dialogRef = this.confirmDeleteTrainerDialog.open(TrainerDeleteConfirmDialogComponent, {
+      data: { trainer: trainer }
+    });
 
+    dialogRef.afterClosed().subscribe(result => {
+      if (result && result.trainer) {
+        this.trainersService.delete(result.trainer.id)
+          .subscribe(() => {
+            this._initTrainers();
+          }
+          );
+      }
+    });
   }
 
   private _initTrainers(): void {

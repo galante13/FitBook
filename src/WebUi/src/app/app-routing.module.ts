@@ -6,7 +6,7 @@ import { TrainerComponent } from './trainers/components/trainer/trainer.componen
 
 const routes: Routes = [
   { path: 'trainers', component: TrainersListComponent },
-  { path: 'trainer/:id', component: TrainerComponent }
+  { path: 'trainer/:id', component: TrainerComponent },
   { path: 'trainer', component: TrainerComponent }
 ];
 

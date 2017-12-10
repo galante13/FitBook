@@ -13,17 +13,21 @@ import {
   MatInputModule, MatButtonModule, MatFormFieldModule,
   MatNativeDateModule, MatDatepickerModule,
   MatIconModule, MatCardModule, MatSidenavModule,
-  MatListModule, MatTableModule
+  MatListModule, MatTableModule, MatDialogModule
 } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
-import { TrainerComponent } from './trainers/components/trainer/trainer.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
+
+import { TrainerComponent } from './trainers/components/trainer/trainer.component';
 import { TrainersListComponent } from './trainers/components/trainers-list/trainers-list.component';
+import {
+  TrainerDeleteConfirmDialogComponent
+} from './trainers/components/trainer-delete-confirm-dialog/trainer-delete-confirm-dialog.component';
+
 
 import { AppRoutingModule } from './/app-routing.module';
-
 
 @NgModule({
   declarations: [
@@ -33,6 +37,7 @@ import { AppRoutingModule } from './/app-routing.module';
     SidenavComponent,
     TrainersListComponent,
     TrainerComponent,
+    TrainerDeleteConfirmDialogComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,13 +55,17 @@ import { AppRoutingModule } from './/app-routing.module';
     MatSidenavModule,
     MatListModule,
     MatTableModule,
+    MatDialogModule,
 
     HttpClientModule,
 
     AppRoutingModule
   ],
+  entryComponents: [
+    TrainerDeleteConfirmDialogComponent
+  ],
   providers: [],
   bootstrap: [AppComponent],
-  schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class AppModule { }
