@@ -1,4 +1,4 @@
-<form (ngSubmit)="onSubmit()" #heroForm="ngForm">
+<form *ngIf="trainer" (ngSubmit)="onSubmit()" #heroForm="ngForm">
     <div class="container">
       <input type="hidden" value="{{trainer.Id}}">
   

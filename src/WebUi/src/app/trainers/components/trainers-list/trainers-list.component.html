@@ -19,7 +19,7 @@
 
     <ng-container matColumnDef="birthDate">
       <mat-header-cell *matHeaderCellDef> Birth Date </mat-header-cell>
-      <mat-cell *matCellDef="let trainer"> {{trainer.birthDate}} </mat-cell>
+      <mat-cell *matCellDef="let trainer"> {{trainer.birthDate | date: 'dd/MM/yyyy'}} </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="birthCity">

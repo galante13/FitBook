@@ -16,6 +16,10 @@ import {
   MatListModule, MatTableModule, MatDialogModule
 } from '@angular/material';
 
+import {
+  DateAdapter
+} from '@angular/material';
+
 import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
 import { SidenavComponent } from './sidenav/sidenav.component';
@@ -26,6 +30,7 @@ import {
   TrainerDeleteConfirmDialogComponent
 } from './trainers/components/trainer-delete-confirm-dialog/trainer-delete-confirm-dialog.component';
 
+import { FitbookDateAdapter } from './utils/fitbook-date-adapter';
 
 import { AppRoutingModule } from './/app-routing.module';
 
@@ -64,7 +69,8 @@ import { AppRoutingModule } from './/app-routing.module';
   entryComponents: [
     TrainerDeleteConfirmDialogComponent
   ],
-  providers: [],
+  providers: [
+    { provide: DateAdapter, useClass: FitbookDateAdapter }],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
