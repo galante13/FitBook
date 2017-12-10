@@ -13,7 +13,7 @@ import {
   MatInputModule, MatButtonModule, MatFormFieldModule,
   MatNativeDateModule, MatDatepickerModule,
   MatIconModule, MatCardModule, MatSidenavModule,
-  MatListModule
+  MatListModule, MatTableModule
 } from '@angular/material';
 
 import { AppComponent } from './app.component';
@@ -49,6 +49,7 @@ import { AppRoutingModule } from './/app-routing.module';
     MatCardModule,
     MatSidenavModule,
     MatListModule,
+    MatTableModule,
 
     HttpClientModule,
 
