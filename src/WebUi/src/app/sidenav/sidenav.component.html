@@ -1,0 +1,13 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav mode="side" #sidenav class="sidenav">
+    <app-menu></app-menu>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <div class="sidenav-content">
+      <button mat-button (click)="burgerClicked(sidenav)">
+        <mat-icon>list</mat-icon>
+      </button>
+      <ng-content></ng-content>>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
