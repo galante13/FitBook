@@ -10,7 +10,9 @@ using Trainers.Api.ViewModels;
 
 namespace Trainers.Api.Controllers
 {
-    //TODO: Add automapper and use viewModels
+    //TODO: Change verbs Put for edit and post for add
+    //also change it in Angular app.
+    //change route, add api versioning
     [Route("api/[controller]")]
     public class TrainersController : Controller
     {
